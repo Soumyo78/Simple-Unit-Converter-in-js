@@ -60,7 +60,9 @@ document.getElementById('select-menu').addEventListener("change", () =>{
             break;
 
         case 3:
-            let vol_item_arr = ["Liter", "Milliliter"]
+            let vol_item_arr = ["Liter", "Milliliter"];
+
+            remove_dropdown_items();
 
             for(let i=0; i<vol_item_arr.length; i++){
                 let vol_arr_item = document.createElement('option');
