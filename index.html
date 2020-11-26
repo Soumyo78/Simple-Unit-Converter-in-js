@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Unit Converter</title>
+</head>
+<body id="canvas">
+    <div class="main-container">
+        <h1 id="heading">Simple Unit Converter</h1>
+        <div>
+            <label for="parameter">Choose any one:</label>
+            <select name="parameter-select" id="select-menu">
+                <option value="0" selected>-- Select a Parameter --</option>
+                <option value=1 id="temp">Temperature</option>
+                <option value=2 id="length">Length</option>
+                <option value=3 id="vol">Volume</option>
+                <option value=4 id="wt">Weight</option>
+            </select>
+        </div>
+        <div>
+            <span>
+                <select name="left-units" id="left-unit">
+                </select>
+                <label for="equal sign" id="eql">=</label>
+                <select name="right-units" id="right-unit">
+                </select>
+            </span>
+        </div>
+        <div>
+            <span>
+                <input id="input-box" type="text">
+                <input id="output-box" type="text" disabled>
+            </span>
+        </div>
+        <button id="convert-btn">Convert</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
