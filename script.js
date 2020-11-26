@@ -95,7 +95,7 @@ document.getElementById('convert-btn').addEventListener("click", () =>{
     
         if((left_dropdown_id=="celsius-left") && (right_dropdown_id=="fahrenheit-right")){
             let result = (((9/5)*parseFloat(left_box_input))+32);
-            right_box_output.value = result;
+            right_box_output.value = result.toFixed(3);
         }
     
         if((left_dropdown_id=="celsius-left") && (right_dropdown_id=="kelvin-right")){
@@ -105,12 +105,12 @@ document.getElementById('convert-btn').addEventListener("click", () =>{
     
         if((left_dropdown_id=="fahrenheit-left") && (right_dropdown_id=="celsius-right")){
             let result = ((5/9)*(parseFloat(left_box_input)-32));
-            right_box_output.value = result;
+            right_box_output.value = result.toFixed(3);
         }
     
         if((left_dropdown_id=="fahrenheit-left") && (right_dropdown_id=="kelvin-right")){
             let result = ((5/9)*(parseFloat(left_box_input)-32)+273);
-            right_box_output.value = result;
+            right_box_output.value = result.toFixed(3);
         }
     
         if((left_dropdown_id=="kelvin-left") && (right_dropdown_id=="celsius-right")){
@@ -120,7 +120,7 @@ document.getElementById('convert-btn').addEventListener("click", () =>{
     
         if((left_dropdown_id=="kelvin-left") && (right_dropdown_id=="fahrenheit-right")){
             let result = (((9/5)*(parseFloat(left_box_input)-273))+32);
-            right_box_output.value = result;
+            right_box_output.value = result.toFixed(3);
         }
     
     }
