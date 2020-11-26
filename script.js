@@ -60,7 +60,23 @@ document.getElementById('select-menu').addEventListener("change", () =>{
             break;
 
         case 3:
-            console.log("volume selected");
+            let vol_item_arr = ["Liter", "Milliliter"]
+
+            for(let i=0; i<vol_item_arr.length; i++){
+                let vol_arr_item = document.createElement('option');
+                vol_arr_item.innerHTML = vol_item_arr[i];
+                vol_arr_item.setAttribute('value', i);
+                vol_arr_item.setAttribute('id', vol_item_arr[i].toLowerCase()+"-left")
+                document.querySelector('#left-unit').appendChild(vol_arr_item);
+            }
+                
+            for(let i=0; i<vol_item_arr.length; i++){
+                let vol_arr_item = document.createElement('option');
+                vol_arr_item.innerHTML = vol_item_arr[i];
+                vol_arr_item.setAttribute('value', i);
+                vol_arr_item.setAttribute('id', vol_item_arr[i].toLowerCase()+"-right")
+                document.querySelector('#right-unit').appendChild(vol_arr_item);
+            }
             break;
 
         case 4:
@@ -127,10 +143,73 @@ document.getElementById('convert-btn').addEventListener("click", () =>{
 
     if(selected_parameter_id=="length"){
         console.log("length is selecetd");
+
+        if((left_dropdown_id=="meter-left" && right_dropdown_id=="meter-right") || (left_dropdown_id=="kilometer-left" && right_dropdown_id=="kilometer-right") || (left_dropdown_id=="centimeter-left" && right_dropdown_id=="centimeter-right") || (left_dropdown_id=="millimeter-left" && right_dropdown_id=="millimeter-right")){
+            let result = parseFloat(left_box_input);
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="meter-left") && (right_dropdown_id=="kilometer-right")){
+            let result = parseFloat(left_box_input)*0.001;
+            right_box_output.value = result.toFixed(4);
+        }
+
+        if((left_dropdown_id=="meter-left") && (right_dropdown_id=="centimeter-right")){
+            let result = parseFloat(left_box_input)*100;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="meter-left") && (right_dropdown_id=="millimeter-right")){
+            let result = parseFloat(left_box_input)*1000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="kilometer-left") && (right_dropdown_id=="millimeter-right")){
+            let result = parseFloat(left_box_input)*1000000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="kilometer-left") && (right_dropdown_id=="centimeter-right")){
+            let result = parseFloat(left_box_input)*100000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="kilometer-left") && (right_dropdown_id=="meter-right")){
+            let result = parseFloat(left_box_input)*1000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="centimeter-left") && (right_dropdown_id=="meter-right")){
+            let result = parseFloat(left_box_input)*0.01;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="centimeter-left") && (right_dropdown_id=="kilometer-right")){
+            let result = parseFloat(left_box_input)*0.00001;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="centimeter-left") && (right_dropdown_id=="millimeter-right")){
+            let result = parseFloat(left_box_input)*10;
+            right_box_output.value = result;
+        }
     }
 
     if(selected_parameter_id=="vol"){
-        console.log("vol is selecetd");
+        if((left_dropdown_id=="liter-left" && right_dropdown_id=="liter-right") || (left_dropdown_id=="milliliter-left" && right_dropdown_id=="milliliter-right")){
+            let result = parseFloat(left_box_input);
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="liter-left") && (right_dropdown_id=="milliliter-right")){
+            let result = parseFloat(left_box_input)*1000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="milliliter-left") && (right_dropdown_id=="liter-right")){
+            let result = parseFloat(left_box_input)*0.001;
+            right_box_output.value = result;
+        }
     }
 
     if(selected_parameter_id=="wt"){
