@@ -56,7 +56,17 @@
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    width: 100px;
+    background-color: cyan;
+    color: black;
+    width: 150px;
+}
+
+#input-box{
+    margin-right: 10px;
+}
+
+#output-box{
+    margin-left: 10px;
 }
 
 .btn-container{
@@ -69,6 +79,8 @@
 .btn{
     background-color: darkblue;
     color: white;
-    font-size: large;
+    font-size: larger;
     font-weight: bold;
+    width: 180px;
+    height: 40px;
 }
