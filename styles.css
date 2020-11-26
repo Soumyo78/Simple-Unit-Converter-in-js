@@ -1,0 +1,74 @@
+#canvas{
+    background-color: darkkhaki;
+}
+
+#heading{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkgreen;
+}
+
+.select-parameter-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: darkred;
+}
+
+#select-menu{
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.unit-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.dropdown{
+    font-size: 15px;
+    font-weight: 700; 
+}
+
+#left-unit{
+    margin-right: 35px;
+}
+
+#right-unit{
+    margin-left: 35px;
+}
+
+.input-output-box-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.box{
+    height: 30px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 100px;
+}
+
+.btn-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.btn{
+    background-color: darkblue;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}

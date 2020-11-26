@@ -9,8 +9,8 @@
 <body id="canvas">
     <div class="main-container">
         <h1 id="heading">Simple Unit Converter</h1>
-        <div>
-            <label for="parameter">Choose any one:</label>
+        <div class="select-parameter-container">
+            <label for="parameter">Choose any one : =></label>
             <select name="parameter-select" id="select-menu">
                 <option value="0" selected>-- Select a Parameter --</option>
                 <option value=1 id="temp">Temperature</option>
@@ -19,22 +19,24 @@
                 <option value=4 id="wt">Weight</option>
             </select>
         </div>
-        <div>
+        <div class="unit-container">
             <span>
-                <select name="left-units" id="left-unit">
+                <select name="left-units" class="dropdown" id="left-unit">
                 </select>
                 <label for="equal sign" id="eql">=</label>
-                <select name="right-units" id="right-unit">
+                <select name="right-units" class="dropdown" id="right-unit">
                 </select>
             </span>
         </div>
-        <div>
+        <div class="input-output-box-container">
             <span>
-                <input id="input-box" type="text">
-                <input id="output-box" type="text" disabled>
+                <input class="box" id="input-box" type="text">
+                <input class="box" id="output-box" type="text" disabled>
             </span>
         </div>
-        <button id="convert-btn">Convert</button>
+        <div class="btn-container">
+            <button class="btn" id="convert-btn">Convert</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
