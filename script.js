@@ -82,7 +82,25 @@ document.getElementById('select-menu').addEventListener("change", () =>{
             break;
 
         case 4:
-            console.log("weight selected");
+            let wt_item_arr = ["Gram", "Kilogram", "Milligram"];
+
+            remove_dropdown_items();
+
+            for(let i=0; i<wt_item_arr.length; i++){
+                let wt_arr_item = document.createElement('option');
+                wt_arr_item.innerHTML = wt_item_arr[i];
+                wt_arr_item.setAttribute('value', i);
+                wt_arr_item.setAttribute('id', wt_item_arr[i].toLowerCase()+"-left")
+                document.querySelector('#left-unit').appendChild(wt_arr_item);
+            }
+                
+            for(let i=0; i<wt_item_arr.length; i++){
+                let wt_arr_item = document.createElement('option');
+                wt_arr_item.innerHTML = wt_item_arr[i];
+                wt_arr_item.setAttribute('value', i);
+                wt_arr_item.setAttribute('id', wt_item_arr[i].toLowerCase()+"-right")
+                document.querySelector('#right-unit').appendChild(wt_arr_item);
+            }
             break;
 
         default:
@@ -194,6 +212,21 @@ document.getElementById('convert-btn').addEventListener("click", () =>{
             let result = parseFloat(left_box_input)*10;
             right_box_output.value = result;
         }
+
+        if((left_dropdown_id=="millimeter-left") && (right_dropdown_id=="meter-right")){
+            let result = parseFloat(left_box_input)*0.001;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="millimeter-left") && (right_dropdown_id=="kilometer-right")){
+            let result = parseFloat(left_box_input)*0.000001;
+            right_box_output.value = result.toFixed(6);
+        }
+
+        if((left_dropdown_id=="millimeter-left") && (right_dropdown_id=="centimeter-right")){
+            let result = parseFloat(left_box_input)*0.1;
+            right_box_output.value = result;
+        }
     }
 
     if(selected_parameter_id=="vol"){
@@ -214,6 +247,39 @@ document.getElementById('convert-btn').addEventListener("click", () =>{
     }
 
     if(selected_parameter_id=="wt"){
-        console.log("wt is selecetd");
+        if((left_dropdown_id=="gram-left" && right_dropdown_id=="gram-right") || (left_dropdown_id=="kilogram-left" && right_dropdown_id=="kilogram-right") || (left_dropdown_id=="milligram-left" && right_dropdown_id=="milligram-right")){
+            let result = parseFloat(left_box_input);
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="gram-left") && (right_dropdown_id=="kilogram-right")){
+            let result = parseFloat(left_box_input)*0.001;
+            right_box_output.value = result.toFixed(4);
+        }
+
+        if((left_dropdown_id=="gram-left") && (right_dropdown_id=="milligram-right")){
+            let result = parseFloat(left_box_input)*1000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="kilogram-left") && (right_dropdown_id=="milligram-right")){
+            let result = parseFloat(left_box_input)*1000000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="kilogram-left") && (right_dropdown_id=="gram-right")){
+            let result = parseFloat(left_box_input)*1000;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="milligram-left") && (right_dropdown_id=="gram-right")){
+            let result = parseFloat(left_box_input)*0.001;
+            right_box_output.value = result;
+        }
+
+        if((left_dropdown_id=="milligram-left") && (right_dropdown_id=="kilogram-right")){
+            let result = parseFloat(left_box_input)*0.000001;
+            right_box_output.value = result.toFixed(6);
+        }
     }
 })
