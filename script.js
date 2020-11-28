@@ -144,7 +144,6 @@ document.getElementById('convert-btn').addEventListener("click", () =>{
     }
 
     if(selected_parameter_id=="length"){
-        console.log("length is selecetd");
 
         if((left_dropdown_id=="meter-left" && right_dropdown_id=="meter-right") || (left_dropdown_id=="kilometer-left" && right_dropdown_id=="kilometer-right") || (left_dropdown_id=="centimeter-left" && right_dropdown_id=="centimeter-right") || (left_dropdown_id=="millimeter-left" && right_dropdown_id=="millimeter-right")){
             let result = parseFloat(left_box_input);
